@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="wrap">
+        <header id="header" class="clearfix">
+            <h1><a href="#"><img src="images/logo.png" alt="logo"></a></h1>
+            <nav class="nav">
+                <ul class="clearfix">
+                    <li><a href="#">Modelling</a>
+                        <ul class="submenu">
+                            <li><a href="#">건물</a></li>
+                            <li><a href="#">가구</a></li>
+                            <li><a href="#">소품</a></li>
+                            <li><a href="#">인테리어</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Design</a>
+                        <ul class="submenu">
+                            <li><a href="#">어플리케이션</a></li>
+                            <li><a href="#">잡지</a></li>
+                            <li><a href="#">앨범</a></li>
+                            <li><a href="#">사진보정</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Video</a>
+                        <ul class="submenu">
+                            <li><a href="#">모션그래픽</a></li>
+                            <li><a href="#">ASMR</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Contact</a>
+                        <ul class="submenu">
+                            <li><a href="#">E-mail</a></li>
+                            <li><a href="#">카카오톡</a></li>
+                            <li><a href="#">Tel.</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- //header -->
+        <section id="banner">
+            <div class="slideList">
+                <div class="slideImg">
+                    <img src="images/banner01.jpg" alt="배너1">
+                </div>
+                <div class="slideImg">
+                    <img src="images/banner02.jpg" alt="배너2">
+                </div>
+                <div class="slideImg">
+                    <img src="images/banner03.jpg" alt="배너3">
+                </div>
+            </div>
+        </section>
+        <!-- //banner-->
+        <section id="content1" class="clearfix">
+            <article class="left">
+                <img src="images/contents.jpg" alt="명언1">
+            </article>
+            <article class="right">
+                <img src="images/contents02.jpg" alt="명언2">
+            </article>
+        </section>
+        <!-- //content1-->
+        
+        <section id="mockup">
+            <div class="best clearfix">
+                <figure>
+                    <img src="images/04.jpg" alt="의자">
+                    <figcaption>의자 모델링</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/03.jpg" alt="소파">
+                    <figcaption>소파 모델링</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/06.jpg" alt="수도꼭지">
+                    <figcaption>수도꼭지 모델링</figcaption>
+                </figure>
+            </div>
+            <div class="best clearfix">
+                <figure>
+                    <img src="images/01.jpg" alt="의자">
+                    <figcaption>의자 모델링</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/05.jpg" alt="소파">
+                    <figcaption>소파 모델링</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/02.jpg" alt="침대">
+                    <figcaption>침대 모델링</figcaption>
+                </figure>
+            </div>
+        </section>
+        <!--//mockup-->
+        
+        <footer id="footer" class="clearfix">
+            <h2><img src="images/logo.png" alt="로고"></h2>
+            <div class="foot">
+                <ul>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">법적고지</a></li>
+                    <li><a href="#">사업자 정보확인</a></li>
+                </ul>
+                <address>
+                    한강미디어고 제작자 : 오상엽<br>
+                    주소 : 서울시 영등포구 선유로 55길 22<br>
+                    개인정보취급방침
+                </address>
+            </div>
+        </footer>
+    </div>
+    <!-- script -->
+    <script src="script/jquery.min.js"></script>
+    <script src="script/custom.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        //내비게이션
+        $(".nav > ul > li").mouseover(function(){
+            $(this).find(".submenu").stop().slideDown(200);
+        });
+        $(".nav > ul > li").mouseout(function(){
+            $(this).find(".submenu").stop().slideUp(200);
+        });
+        //이미지 슬라이드(좌우)
+        var currentIndex = 0;
+        
+        setInterval(function(){
+            if(currentIndex < 2){
+                currentIndex++;
+            } else {
+                currentIndex = 0;
+            }
+            var slidePosition = currentIndex * (-1000)+"px";
+            $(".slideList").animate({ left:slidePosition}, 400);
+        },3000);
+    </script>
+</body>
+</html>
